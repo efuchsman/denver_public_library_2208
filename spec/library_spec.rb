@@ -63,7 +63,7 @@ RSpec.describe Library do
 
   end
 
-  it "can checout books" do
+  it "can checkout books" do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
@@ -85,6 +85,7 @@ RSpec.describe Library do
 
     expect(dpl.checkout(mockingbird)).to be true
     expect(dpl.checkout(jane_eyre)).to be true
+
 
   end
 
