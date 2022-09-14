@@ -1,6 +1,6 @@
 class Book
 
-  attr_reader :author_first_name, :author_last_name, :title, :publication_date, :author
+  attr_reader :author_first_name, :author_last_name, :title, :publication_date, :author, :publication_year
 
 
   def initialize(attributes)
@@ -9,6 +9,7 @@ class Book
     @title = attributes[:title]
     @publication_date = attributes[:publication_date]
     @author = "#{@author_first_name} #{author_last_name}"
+    @publication_year = @publication_date.split(",")[1].strip
 
   end
 
