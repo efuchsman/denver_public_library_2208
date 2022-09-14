@@ -17,5 +17,22 @@ class Library
      end
   end
 
+  def publication_time_frame_for(author)
+
+    publication_hash = {}
+    years = []
+        author.books.each do |book|
+            # require 'pry'; binding.pry
+          years << book.publication_year.to_i
+
+        end
+        publication_hash[:start] = years.min.to_s
+        publication_hash[:end] = years.max.to_s
+
+        return publication_hash
+
+
+  end
+
 
 end

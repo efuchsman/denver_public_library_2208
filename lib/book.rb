@@ -14,7 +14,7 @@ class Book
   end
 
   def publication_year
-    @publication_date.split(",")[1].strip
+    @publication_date[-4..-1]
   end
 
 end
