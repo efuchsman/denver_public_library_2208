@@ -30,6 +30,14 @@ class Library
         publication_hash[:end] = years.max.to_s
 
         return publication_hash
+  end
+
+  def checkout(book)
+    if @books.include?(book)
+      true
+    else
+      false
+    end
 
 
   end

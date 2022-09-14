@@ -63,4 +63,29 @@ RSpec.describe Library do
 
   end
 
+  it "can checout books" do
+    dpl = Library.new("Denver Public Library")
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+    mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+
+    dpl.checkout(mockingbird)
+    dpl.checkout(jane_eyre)
+
+    expect(dpl.checkout(mockingbird)).to be false
+    expect(dpl.checkout(jane_eyre)).to be false
+
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+
+    dpl.checkout(mockingbird)
+    dpl.checkout(jane_eyre)
+
+    expect(dpl.checkout(mockingbird)).to be true
+    expect(dpl.checkout(jane_eyre)).to be true
+
+  end
+
 end
