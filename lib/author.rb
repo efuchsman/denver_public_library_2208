@@ -9,4 +9,10 @@ def initialize(atts)
 
 end
 
+def write(title, publication_date)
+  @written_book = Book.new(({author_first_name: @author_first_name, author_last_name: @author_last_name, title: title, publication_date: publication_date}))
+
+
+end
+
 end
